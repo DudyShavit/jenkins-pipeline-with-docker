@@ -16,7 +16,7 @@ pipeline {
             }
         }
         
-        stage ('Sonar Analysis') {
+        /* stage ('Sonar Analysis') {
             agent {node{
                    label "jenkins"}
             }
@@ -24,7 +24,7 @@ pipeline {
                 sh 'echo "running sonar analysis"'
                 sh "mvn sonar:sonar -Dsonar.host.url=http://sonarqube:9000 -Dsonar.branch=${env.BRANCH_NAME}"
             }   
-        }
+        } */
         
         stage ('Deploy to Integration') {
             agent {node{
